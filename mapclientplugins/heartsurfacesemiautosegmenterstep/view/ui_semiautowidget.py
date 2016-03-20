@@ -104,4 +104,4 @@ class Ui_SemiAutoWidget(object):
         self.pushButtonViewAll.setText(QtGui.QApplication.translate("SemiAutoWidget", "View All", None, QtGui.QApplication.UnicodeUTF8))
         self.label_3.setText(QtGui.QApplication.translate("SemiAutoWidget", "Image Plane: ", None, QtGui.QApplication.UnicodeUTF8))
 
-from semiautosceneviewerwidget import SemiAutoSceneviewerWidget
+from mapclientplugins.heartsurfacesemiautosegmenterstep.view.semiautosceneviewerwidget import SemiAutoSceneviewerWidget

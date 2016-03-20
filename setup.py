@@ -7,7 +7,7 @@ import sys, os
 dependencies = [] # Insert plugin dependencies here
 
 setup(name=u'mapclientplugins.heartsurfacesemiautosegmenterstep',
-      version='0.0',
+      version='0.1.0',
       description='',
       long_description="",
       classifiers=[],
