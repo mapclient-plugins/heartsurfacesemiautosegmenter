@@ -1,4 +1,3 @@
-
 '''
 MAP Client Plugin Step
 '''
@@ -20,10 +19,10 @@ class HeartSurfaceSemiAutoSegmenterStep(WorkflowStepMountPoint):
 
     def __init__(self, location):
         super(HeartSurfaceSemiAutoSegmenterStep, self).__init__('Heart Surface Semi Auto Segmenter', location)
-        self._configured = False # A step cannot be executed until it has been configured.
+        self._configured = False  # A step cannot be executed until it has been configured.
         self._category = 'Segmentation'
         # Add any other initialisation code here:
-        self._icon =  QtGui.QImage(':/heartsurfacesemiautosegmenterstep/images/segmentation.png')
+        self._icon = QtGui.QImage(':/heartsurfacesemiautosegmenterstep/images/segmentation.png')
         # Ports:
         self.addPort(('http://physiomeproject.org/workflow/1.0/rdf-schema#port',
                       'http://physiomeproject.org/workflow/1.0/rdf-schema#uses',
@@ -32,15 +31,14 @@ class HeartSurfaceSemiAutoSegmenterStep(WorkflowStepMountPoint):
                       'http://physiomeproject.org/workflow/1.0/rdf-schema#provides',
                       'http://physiomeproject.org/workflow/1.0/rdf-schema#pointcloud'))
         # Port data:
-        self._portData0 = None # images
-        self._portData1 = None # pointcloud
+        self._portData0 = None  # images
+        self._portData1 = None  # pointcloud
         # Config:
         self._config = {}
         self._config['identifier'] = ''
-        
+
         self._view = None
         self._image_data = None
-
 
     def execute(self):
         '''
@@ -50,7 +48,7 @@ class HeartSurfaceSemiAutoSegmenterStep(WorkflowStepMountPoint):
         '''
         if self._view is None:
             model = SemiAutoModel()
-#             model.setLocation(os.path.join(self._location, self._config['identifier']))
+            #             model.setLocation(os.path.join(self._location, self._config['identifier']))
             self._view = SemiAutoWidget(model)
             self._view.registerDoneExecution(self._doneExecution)
         else:
@@ -60,7 +58,7 @@ class HeartSurfaceSemiAutoSegmenterStep(WorkflowStepMountPoint):
             self._view.setImageData(self._image_data)
 
         self._view.initialize()
-        
+
         self._setCurrentWidget(self._view)
 
     def setPortData(self, index, dataIn):
@@ -70,7 +68,7 @@ class HeartSurfaceSemiAutoSegmenterStep(WorkflowStepMountPoint):
         uses port for this step then the index can be ignored.
         '''
         print(dataIn)
-        self._image_data = dataIn # images
+        self._image_data = dataIn  # images
 
     def getPortData(self, index):
         '''
@@ -78,7 +76,7 @@ class HeartSurfaceSemiAutoSegmenterStep(WorkflowStepMountPoint):
         The index is the index of the port in the port list.  If there is only one
         provides port for this step then the index can be ignored.
         '''
-        return self._view.getPointCloud() # pointcloud
+        return self._view.getPointCloud()  # pointcloud
 
     def configure(self):
         '''
@@ -119,7 +117,6 @@ class HeartSurfaceSemiAutoSegmenterStep(WorkflowStepMountPoint):
         '''
         return json.dumps(self._config, default=lambda o: o.__dict__, sort_keys=True, indent=4)
 
-
     def deserialize(self, string):
         '''
         Add code to deserialize this step from string.  This method should
@@ -131,5 +128,3 @@ class HeartSurfaceSemiAutoSegmenterStep(WorkflowStepMountPoint):
         d.identifierOccursCount = self._identifierOccursCount
         d.setConfig(self._config)
         self._configured = d.validate()
-
-
