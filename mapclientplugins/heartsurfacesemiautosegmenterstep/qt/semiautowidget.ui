@@ -197,7 +197,7 @@
   <customwidget>
    <class>SemiAutoSceneviewerWidget</class>
    <extends>QWidget</extends>
-   <header>semiautosceneviewerwidget.h</header>
+   <header>mapclientplugins/heartsurfacesemiautosegmenterstep/view/semiautosceneviewerwidget.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>
