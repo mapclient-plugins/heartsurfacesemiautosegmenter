@@ -30,8 +30,7 @@ class HeartSurfaceSemiAutoSegmenterStep(WorkflowStepMountPoint):
         self._portData0 = None  # images
         self._portData1 = None  # pointcloud
         # Config:
-        self._config = {}
-        self._config['identifier'] = ''
+        self._config = {'identifier': ''}
 
         self._view = None
         self._image_data = None
