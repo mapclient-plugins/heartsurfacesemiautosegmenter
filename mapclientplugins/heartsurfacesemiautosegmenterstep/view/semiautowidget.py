@@ -1,22 +1,22 @@
-'''
+"""
 Created on Jul 27, 2015
 
 @author: hsorby
-'''
+"""
 from PySide2 import QtWidgets
 
 from mapclientplugins.heartsurfacesemiautosegmenterstep.view.ui_semiautowidget import Ui_SemiAutoWidget
 
 
 class SemiAutoWidget(QtWidgets.QWidget):
-    '''
+    """
     classdocs
-    '''
+    """
 
     def __init__(self, model, parent=None):
-        '''
+        """
         Constructor
-        '''
+        """
         super(SemiAutoWidget, self).__init__(parent)
         self._ui = Ui_SemiAutoWidget()
         self._ui.setupUi(self)
