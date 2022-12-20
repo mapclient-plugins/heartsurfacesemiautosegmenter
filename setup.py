@@ -4,7 +4,7 @@ import sys, os
 # The dependencies variable is used by MAP Client to
 # determine if further downloads are required.  Please
 # list all dependencies here.
-dependencies = [] # Insert plugin dependencies here
+dependencies = ['PySide6']  # Insert plugin dependencies here
 
 setup(name=u'mapclientplugins.heartsurfacesemiautosegmenterstep',
       version='0.1.0',

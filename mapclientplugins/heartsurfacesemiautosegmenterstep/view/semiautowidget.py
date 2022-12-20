@@ -3,7 +3,7 @@ Created on Jul 27, 2015
 
 @author: hsorby
 """
-from PySide2 import QtWidgets
+from PySide6 import QtWidgets
 
 from mapclientplugins.heartsurfacesemiautosegmenterstep.view.ui_semiautowidget import Ui_SemiAutoWidget
 
