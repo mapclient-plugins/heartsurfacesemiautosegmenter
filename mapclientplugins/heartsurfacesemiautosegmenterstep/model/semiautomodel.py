@@ -3,7 +3,7 @@ Created on Jul 27, 2015
 
 @author: hsorby
 """
-from opencmiss.zinc.context import Context
+from cmlibs.zinc.context import Context
 
 
 class SemiAutoModel(object):

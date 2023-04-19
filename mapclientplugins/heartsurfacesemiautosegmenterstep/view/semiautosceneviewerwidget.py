@@ -3,7 +3,7 @@ Created on Jul 27, 2015
 
 @author: hsorby
 """
-from opencmiss.zincwidgets.sceneviewerwidget import SceneviewerWidget
+from cmlibs.widgets.sceneviewerwidget import SceneviewerWidget
 
 
 class SemiAutoSceneviewerWidget(SceneviewerWidget):
